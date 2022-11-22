@@ -1,43 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<html lang="ru">
+    <head>
+        <title>Заголовок</title>
+        <meta name="description" content="Крутой фреймворк UIkit 3">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/uikit.min.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+        <script src="scripts/jQuery.js"></script>
+    </head>
+    <body>
+        <header uk-sticky class="header">
+            <div class="header-bg">           
+                <div class="uk-container uk-container-large">
+                    <div class="header-flex">
+                        <img src="imgs/logo.svg" alt="logo">
+                        <nav class="nav-header">
+                            <li>
+                                <a class="header-nav-link" href="#">Главная</a>
+                            </li>
+                            <li>
+                                <a class="header-nav-link" href="events.html">Мероприятия</a>
+                            </li>
+                            <li>
+                                <a class="header-nav-link" href="#">Создать</a>
+                            </li>
+                            <li>
+                                <a class="header-nav-link" href="#">Подтвердить</a>
+                            </li>
+                        </nav>
+                        <div class="user-and-poisk">
+                            <form class="uk-search uk-search-default">
+                                <span uk-search-icon></span>
+                                <input class="uk-search-input search-style" type="search" placeholder="Найти ...">
+                            </form>
+                            <img src="imgs/user.svg" alt="user">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="uk-container uk-container-large">
+                <h1 class="uk-heading-divider">Ваши мероприятия</h1>
+                <div uk-filter=".js-filter">
+                    <ul class="uk-subnav uk-subnav-pill">
+                        <li uk-filter-control=".tag-next">
+                            <a href="#" class="my-event-next">
+                                Будущие
+                                <span class="uk-badge">10</span>
+                            </a>
+                        </li>
+                        <li uk-filter-control=".tag-prev">
+                            <a href="#" class="my-event-next">
+                                Прошедшие
+                                <span class="uk-badge">3</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="my-event-block" uk-slider="sets: true" class="uk-slider uk-slider-container">
+                        <div class="uk-position-relative uk-margin-small-top uk-visible-toggle">
+                            <ul id="my-event-block-list" id="root" class="uk-slider-items uk-child-width-1-4@s uk-grid js-filter"></ul>
+                            <a class="uk-position-center-left uk-position-small uk-hidden-hover uk-icon uk-slidenav-previous uk-slidenav" href="#" uk-slidenav-previous="" uk-slider-item="previous"><svg width="14" height="24" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" stroke-width="1.4" points="12.775,1 1.225,12 12.775,23 "></polyline></svg></a>
+                            <a class="uk-position-center-right uk-position-small uk-hidden-hover uk-icon uk-slidenav-next uk-slidenav" href="#" uk-slidenav-next="" uk-slider-item="next"><svg width="14" height="24" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" stroke-width="1.4" points="1.225,23 12.775,12 1.225,1 "></polyline></svg></a>
+                        </div>
+                        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"><li uk-slider-item="0" class=""><a href=""></a></li><li uk-slider-item="1" class=""><a href=""></a></li><li uk-slider-item="2" class="uk-active"><a href=""></a></li><li uk-slider-item="3" class=""><a href=""></a></li><li uk-slider-item="4" class=""><a href=""></a></li></ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="test"></div>
+    </body>
+    <script src="scripts/config.js"></script>
 </html>
