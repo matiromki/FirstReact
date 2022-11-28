@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Заголовок</title>
+        <meta name="description" content="Крутой фреймворк UIkit 3">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/uikit.min.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+        <header uk-sticky class="header">
+            <div class="header-bg">           
+                <div class="uk-container uk-container-large">
+                    <div class="header-flex">
+                        <img src="imgs/logo.svg" alt="logo">
+                        <nav class="nav-header">
+                            <li>
+                                <a class="header-nav-link" href="index.html">Главная</a>
+                            </li>
+                            <li>
+                                <a class="header-nav-link" href="events.html">Мероприятия</a>
+                            </li>
+                            <li>
+                                <a class="header-nav-link" href="#">Создать</a>
+                            </li>
+                            <li>
+                                <a class="header-nav-link" href="#">Подтвердить</a>
+                            </li>
+                        </nav>
+                        <div class="user-and-poisk">
+                            <form class="uk-search uk-search-default">
+                                <span uk-search-icon></span>
+                                <input class="uk-search-input search-style" type="search" placeholder="Найти ...">
+                            </form>
+                            <img src="imgs/user.svg" alt="user">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="uk-container uk-container-large">
+                <h1 class="uk-heading-divider">Создание мероприятия</h1>
+                <form id="create-event-form" class="create_form uk-width-3-4@m uk-margin-auto" action="" method="POST">
+                    <fieldset class="uk-fieldset uk-margin">
+                        <legend class="uk-legend uk-margin-small-left uk-text-lead uk-text-bold">Оcновная информация</legend>
+                        <div class="uk-card uk-card-body uk-card-default card-options1 uk-margin-medium-bottom">
+                            <h4 class="uk-margin-small-bottom uk-margin-small-top">Название</h4>
+                            <p class="uk-margin-small-top">Назовите ваше событие ярко и кратко, чтобы заинтересовать пользователей.</p>
+                                <input class="uk-input" name="eventName" type="text" placeholder="Введите название мероприятия" required autocomplete="off">
+                            <h4 class="uk-margin-small-bottom">Описание</h4>
+                            <p class="uk-margin-small-top">Расскажите, что будет на мероприятии и чем оно полезно. Рекомендуем делать описание на 3–4 абзаца.</p>
+                                <input class="uk-input" name="eventInfo" type="text" placeholder="Введите описание мероприятия" required autocomplete="off" rows="3">
+                        </div>
+
+                        <legend class="uk-legend uk-margin-small-left uk-text-lead uk-text-bold">Сетевое мероприятие</legend>
+                        <div class="uk-card uk-card-body uk-card-default card-options1 uk-margin-medium-bottom">
+                            <h4 class="uk-margin-small-bottom">Ссылка на мероприятие</h4> 
+                            <p class="uk-margin-small-top">Введите ссылку, если собираетесь проводить сетевое мероприятие. Сетевые мероприятия позволяют подключать другие точки кипения и дают доступ к аудитории других регионов.</p>
+                                <input class="uk-input" name="eventLink" type="text" placeholder="Введите ссылку" autocomplete="off">
+                        </div>
+
+                        <legend class="uk-legend uk-margin-small-left uk-text-lead uk-text-bold">Баннер</legend>
+                        <div class="uk-card uk-card-body uk-card-default card-options1">
+                            <h4 class="uk-margin-small-bottom">Добавление изображения</h4> 
+                            <p class="uk-margin-small-top">Формат: .jpg и .png, вес: до 2 Mb.</p>
+                            <div class="js.upload uk-form-custom" uk.form-custom>
+                                <input id="create-img-file" type="file">                    
+                                <button id="create-img-file-button" type="button" class="uk-button-primary color-purple create-img-file-button">Выбрать</button>
+                            </div>
+                            <div class="uk-margin" uk-margin>
+                                <div uk-form-custom="target: true">
+                                    <input type="file">
+                                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Выбрать файл" disabled>
+                                </div>
+                                <button class="uk-button uk-button-primary">Отправить</button>
+                            </div>                          
+                        </div>
+                        <div class="uk-margin uk-text-right uk-margin-small-right">
+                            <button type="submit" class="uk-button uk-button-default  confirm-create-event">Отправить</button>
+                        </div>
+                    </fieldset>
+                </form>
+        </main>
+    </body>
+    <script src="scripts/config.js"></script>
+</html>
