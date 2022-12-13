@@ -1,18 +1,18 @@
 
-const mediaQuery = window.matchMedia('(max-width: 1300px)')
-function handleTabletChange(e) {
-    var a = document.getElementById("my-event-block-list");
-    if (a) {
-        if (e.matches) {
-            document.getElementById("my-event-block-list").classList.remove('uk-child-width-1-4@s');
-            document.getElementById("my-event-block-list").classList.add('uk-child-width-1-3@s');
-        }
-        else {
-            document.getElementById("my-event-block-list").classList.add('uk-child-width-1-4@s');
-            document.getElementById("my-event-block-list").classList.remove('uk-child-width-1-3@s');
-        }
-    }   
-}
+// const mediaQuery = window.matchMedia('(max-width: 1300px)')
+// function handleTabletChange(e) {
+//     var a = document.getElementById("my-event-block-list");
+//     if (a) {
+//         if (e.matches) {
+//             document.getElementById("my-event-block-list").classList.remove('uk-child-width-1-4@s');
+//             document.getElementById("my-event-block-list").classList.add('uk-child-width-1-3@s');
+//         }
+//         else {
+//             document.getElementById("my-event-block-list").classList.add('uk-child-width-1-4@s');
+//             document.getElementById("my-event-block-list").classList.remove('uk-child-width-1-3@s');
+//         }
+//     }   
+// }
 mediaQuery.addListener(handleTabletChange)
 handleTabletChange(mediaQuery)
 
@@ -37,15 +37,22 @@ function getFormValue(event) {
 }
 const form = document.getElementById("create-event-form");
 
-      form.addEventListener("submit", (e) => {
-        // this is used only for this example, 
-        // to prevent submission of the form
-        // so you can inspect the data below
-        e.preventDefault();
+form.addEventListener("submit", (e) => {
+  // this is used only for this example, 
+  // to prevent submission of the form
+  // so you can inspect the data below
+  e.preventDefault();
 
-        // you can pass "form" or "e.target" to FormData
-        console.log(Object.fromEntries(new FormData(e.target)));
-        console.log(Object.fromEntries(new FormData(form)));
-        // { a: "foo", b: "bar", c: "baz" }
-      });
+  // you can pass "form" or "e.target" to FormData
+  console.log(Object.fromEntries(new FormData(e.target)));
+  console.log(Object.fromEntries(new FormData(form)));
+  // { a: "foo", b: "bar", c: "baz" }
+});
 
+let windowWidth = window.innerWidth;
+window.addEventListener('resize', function(event) {
+    if (window.innerWidth != windowWidth) {
+        windowWidth = window.innerWidth;
+        handleEvent();
+    }
+});

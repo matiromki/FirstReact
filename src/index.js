@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Card from './Card';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+import App from './App';
+
+const body = ReactDOM.createRoot(document.body);
+body.render(
   <React.StrictMode>
-    <Card />
+     <App/>
   </React.StrictMode>
-);
-
-
+)
